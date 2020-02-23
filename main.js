@@ -19,11 +19,6 @@ Mario.src = "mario.wav";
 var laurel = new Audio();
 laurel.src = "laurel.mp3";
 
-setTimeout(function kickout(){
-    alert("So Long, Bowser!")
-    close()
-}, 3000)
-
 function startQ1() {
     document.getElementById("start").style.display = "none";
 	document.getElementById("Q1").style.display = "block";
