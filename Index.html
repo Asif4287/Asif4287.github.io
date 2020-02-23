@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mosh Quiz</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div>
+            <img src="video-game-heart-png-1.png" height="50px" width="50px" border="3"  id="heart1" style="margin:auto; position: absolute; left: 50%; margin-right: -50%; transform: translate(-200%, 350%)">
+            <img src="video-game-heart-png-1.png" height="50px" width="50px" border="3" id="heart2" style="margin:auto; position: absolute; left: 50%; margin-right: -50%; transform: translate(-50%, 350%)">
+            <img src="video-game-heart-png-1.png" height="50px" width="50px" border="3" id="heart3" style="margin:auto; position: absolute; left: 50%; margin-right: -50%; transform: translate(100%, 350%)" onclick="victory(); solong.play(); kickout; closeMe()">
+        </div>
+        <div class="box">
+            <div id="start">
+                <h1 style=color:white;text-align:center>Welcome to the Mosh Quiz</h1>
+                <button class="start" onclick="startQ1(); bleep.play(); heartcount();">Start Now!</button>
+            </div>
+            <div id="wrong" style="display: none;">
+                <h1 style="text-align:center">You Died</h1>
+                <img src="grave.png" height="150px" width="150px" border="3" style="margin:auto; position: absolute; left: 50%; margin-right: -50%; transform: translate(-50%, 0%)">
+                <button class="retry" onclick="retry(); bleep2.play()">Keep Playing!</button>
+            </div>
+            <div id="bad" style="display: none;">
+                <h1 style="text-align:center">UR BAD</h1>
+                <img src="giphy.gif" height="150px" width="150px" border="3" style="margin:auto; position: absolute; left: 50%; margin-right: -50%; transform: translate(-50%, 0%)">
+                <button class="retry" onclick="replay(); bleep2.play()">Try Again?</button>
+            </div>
+            <div id="Q1" style="display: none; text-align: center;">
+                <h1>What do you see?</h1>
+                <img src="10991066646_af5e2caa34_b.jpg" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <input type="radio" name="radio1" id="A" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="A">The letter A.</label>
+                <br>
+                <input type="radio" name="radio1" id="tfl" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="tfl">The first letter of the alphabet.</label>
+                <br>
+                <input type="radio" name="radio1" id="pacman" style="vertical-align: left;" onclick="Q1Q2(); bleep2.play(); heartcount();">
+                <label for="pacman">An incomplete drawing of Pac-Man eating a Tic-Tac rotated 90 degrees.</label>
+            </div>
+            <div id="Q2" style="display: none; text-align:center;">
+                <h2> My cat had 12 treats, she lost 4. Calculate the mass of the sun.</h2>
+                <img src="cartoon-sun-vector-art.png" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <input type="radio" name="radio2" id="mass" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="mass">1.989 × 10^30 kg</label>
+                <br>
+                <input type="radio" name="radio2" id="superhot" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="superhot">SUPERHOT</label>
+                <br>
+                <input type="radio" name="radio2" id="solides" style="vertical-align: left;" onclick="Q2Q3(); bleep.play(); heartcount();">
+                <label for="solides">LES SOLIDES</label>
+                <br>
+                <input type="radio" name="radio2" id="idk" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="idk">idk</label>
+            </div>
+            <div id="Q3" style="display: none; text-align:center;">
+                <h1>How old is my cat?</h1>
+                <img src="floof.jpg" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <input type="radio" name="radio3" id="four" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="four">Four years old</label>
+                <br>
+                <input type="radio" name="radio3" id="three" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="three">3 Take it or leave it</label>
+                <br>
+                <input type="radio" name="radio3" id="mow" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="mow">Mow</label>
+                <br>
+                <input type="radio" name="radio3" id="floof" style="vertical-align: left;" onclick="Q3Q4(); bleep2.play(); heartcount();">
+                <label for="floof">Floof</label>
+            </div>
+            <div id="Q4" style="display: none; text-align:center;">
+                <h1>How do you pay taxes?</h1>
+                <img src="control-647195_960_720.png" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <input type="radio" name="radio4" id="math" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="math">2+2 is 4, -1 dats 3 quick mafs</label>
+                <br>
+                <input type="radio" name="radio4" id="mitochondria" style="vertical-align: left;" onclick="Q4Q5(); bleep.play(); heartcount();">
+                <label for="mitochondria">Mitochondria is the powerhouse of the cell.</label>
+                <br>
+                <input type="radio" name="radio4" id="tax?" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="tax?">Tax? What does mean tax mate?</label>
+                <br>
+                <input type="radio" name="radio4" id="money" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="money">With Money! Duh!</label>
+            </div>
+            <div id="Q5" style="display: none; text-align:center;">
+                <h1>What color is the dress?</h1>
+                <img src="857.jpg" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <input type="radio" name="radio5" id="b" style="vertical-align: left;" onclick="Q5Q6(); bleep2.play(); heartcount();">
+                <label for="b">B.</label>
+                <br>
+                <input type="radio" name="radio5" id="blueblack" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="blueblack">Black and blue</label>
+                <br>
+                <input type="radio" name="radio5" id="whitegold" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="whitegold">White and gold</label>
+                <br>
+                <input type="radio" name="radio5" id="turtles" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="turtles">I like turtles</label>
+            </div>
+            <div id="Q6" style="display: none; text-align:center;">
+                <h1>What do you hear?</h1>
+                <img src="image.png" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <button onclick="laurel.play()">Play Audio</button>
+                <br>
+                <input type="radio" name="radio6" id="yanny" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="yanny">Yanny</label>
+                <br>
+                <input type="radio" name="radio6" id="laurel" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="laurel">Laurel</label>
+                <br>
+                <input type="radio" name="radio6" id="deaf" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="deaf">I'm deaf</label>
+                <br>
+                <input type="radio" name="radio6" id="Fcat" style="vertical-align: left;" onclick="Q6Q7(); bleep.play(); heartcount();">
+                <label for="Fcat">I like cats</label>
+            </div>
+            <div id="Q7" style="display: none; text-align:center;">
+                <h3>Two trains that are 200km apart are moving 50 kmph. What will the people on board yell?</h3>
+                <img src="train.png" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <input type="radio" name="radio7" id="allabove" style="vertical-align: left;" onclick="Q7Q8(); bleep2.play(); heartcount();">
+                <label for="allabove">All of the above</label>
+                <br>
+                <input type="radio" name="radio7" id="doomed" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="doomed">We're Doomed!</label>
+                <br>
+                <input type="radio" name="radio7" id="scammed" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="scammed">This is a scam!</label>
+                <br>
+                <input type="radio" name="radio7" id="solong" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount();">
+                <label for="solong">So Long, Bowser!</label>
+            </div>
+            <div id="Q8" style="display: none; text-align:center;">
+                <h1>Final Question: You're on your own!</h1>
+                <img src="Delete.png" height="150px" width="150px" border="3" style="margin:auto">
+                <br>
+                <input type="radio" name="radio8" id="wrong1" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount(); alert1();">
+                <label for="wrong1">Wrong</label>
+                <br>
+                <input type="radio" name="radio8" id="wrong2" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount(); alert2();">
+                <label for="wrong2">Wrong</label>
+                <br>
+                <input type="radio" name="radio8" id="wrong3" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount(); alert3();">
+                <label for="wrong3">Wrong</label>
+                <br>
+                <input type="radio" name="radio8" id="wrong4" style="vertical-align: left;" onclick="wrong(); wrongsound.play(); heartcount(); alert4();">
+                <label for="wrong4">Wrong</label>
+            </div>
+            <div id="victory" style="display: none; text-align:center;">
+            <h1>You did it!!</h1>
+            <img src="firework.gif" height="150px" width="150px" border="3" style="margin:auto">
+            <h1>Goodbye!</h1>
+            </div>
+        </div>
+        
+    </body>
+</html>
